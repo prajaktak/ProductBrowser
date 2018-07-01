@@ -43,7 +43,7 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         let productCell: ProductListTableViewCell =  tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductListTableViewCell
         // swiftlint:enable force_cast line_length
         productCell.imageView?.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-        productCell.productTitleLabel.text = (productsArray[indexPath.row] as [String: AnyObject])
+        productCell.productTitleLabel.text = "Title"
         return productCell
     }
 
