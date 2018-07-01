@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B9A0D0E7EF1C2F929C189995 /* Pods_ProductBrowserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F904D1E3734C335DBE3C95BC /* Pods_ProductBrowserTests.framework */; };
+		E1C653C8506067E1C0E6AC6F /* Pods_ProductBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4DDED8ECE4F563987E72640 /* Pods_ProductBrowser.framework */; };
 		F90BAAA220E4236E00FF9D85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAAA120E4236E00FF9D85 /* AppDelegate.swift */; };
 		F90BAAA420E4236E00FF9D85 /* ProductListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAAA320E4236E00FF9D85 /* ProductListingViewController.swift */; };
-		F90BAAAA20E4236E00FF9D85 /* ProductBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F90BAAA820E4236E00FF9D85 /* ProductBrowser.xcdatamodeld */; };
 		F90BAAAC20E4237200FF9D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90BAAAB20E4237200FF9D85 /* Assets.xcassets */; };
 		F90BAAAF20E4237200FF9D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */; };
 		F90BAABA20E4237300FF9D85 /* ProductBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAAB920E4237300FF9D85 /* ProductBrowserTests.swift */; };
+		F95FA4B420E6D08A00490B21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4AF20E6D08900490B21 /* CoreDataManager.swift */; };
+		F95FA4B520E6D08A00490B21 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B020E6D08900490B21 /* Product+CoreDataClass.swift */; };
+		F95FA4B620E6D08A00490B21 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B120E6D08900490B21 /* Product+CoreDataProperties.swift */; };
+		F95FA4B720E6D08A00490B21 /* ProductBrowser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B220E6D08900490B21 /* ProductBrowser.xcdatamodeld */; };
+		F95FA4BA20E914E300490B21 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B920E914E200490B21 /* WebServiceManager.swift */; };
 		F99BE00E20E57C1E00E1EDA0 /* ProductListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */; };
 		F99BE01120E58A5900E1EDA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99BE00F20E58A5900E1EDA0 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -28,16 +34,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D37FA8DA221FFE320CA0061 /* Pods-ProductBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductBrowser/Pods-ProductBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		D8B4C366FB13E061FBDD892A /* Pods-ProductBrowserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductBrowserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductBrowserTests/Pods-ProductBrowserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4BFE7A607803448A47DE093 /* Pods-ProductBrowserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductBrowserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductBrowserTests/Pods-ProductBrowserTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED1AFAAEAD1DD4286CD66DDD /* Pods-ProductBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductBrowser/Pods-ProductBrowser.debug.xcconfig"; sourceTree = "<group>"; };
+		F4DDED8ECE4F563987E72640 /* Pods_ProductBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F904D1E3734C335DBE3C95BC /* Pods_ProductBrowserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductBrowserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90BAA9E20E4236E00FF9D85 /* ProductBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90BAAA120E4236E00FF9D85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F90BAAA320E4236E00FF9D85 /* ProductListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingViewController.swift; sourceTree = "<group>"; };
-		F90BAAA920E4236E00FF9D85 /* ProductBrowser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductBrowser.xcdatamodel; sourceTree = "<group>"; };
 		F90BAAAB20E4237200FF9D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F90BAAAE20E4237200FF9D85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F90BAAB020E4237200FF9D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F90BAAB520E4237200FF9D85 /* ProductBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90BAAB920E4237300FF9D85 /* ProductBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBrowserTests.swift; sourceTree = "<group>"; };
 		F90BAABB20E4237300FF9D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F95FA4AF20E6D08900490B21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F95FA4B020E6D08900490B21 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F95FA4B120E6D08900490B21 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F95FA4B320E6D08900490B21 /* ProductBrowser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProductBrowser.xcdatamodel; sourceTree = "<group>"; };
+		F95FA4B920E914E200490B21 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewCell.swift; sourceTree = "<group>"; };
 		F99BE01020E58A5900E1EDA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1C653C8506067E1C0E6AC6F /* Pods_ProductBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +71,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9A0D0E7EF1C2F929C189995 /* Pods_ProductBrowserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7ACC0BCC99FF74FE4ADF4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4DDED8ECE4F563987E72640 /* Pods_ProductBrowser.framework */,
+				F904D1E3734C335DBE3C95BC /* Pods_ProductBrowserTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		354807F567DCF1C4714EF69A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED1AFAAEAD1DD4286CD66DDD /* Pods-ProductBrowser.debug.xcconfig */,
+				9D37FA8DA221FFE320CA0061 /* Pods-ProductBrowser.release.xcconfig */,
+				D8B4C366FB13E061FBDD892A /* Pods-ProductBrowserTests.debug.xcconfig */,
+				E4BFE7A607803448A47DE093 /* Pods-ProductBrowserTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F90BAA9520E4236E00FF9D85 = {
 			isa = PBXGroup;
 			children = (
 				F90BAAA020E4236E00FF9D85 /* ProductBrowser */,
 				F90BAAB820E4237300FF9D85 /* ProductBrowserTests */,
 				F90BAA9F20E4236E00FF9D85 /* Products */,
+				354807F567DCF1C4714EF69A /* Pods */,
+				1A7ACC0BCC99FF74FE4ADF4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +121,14 @@
 		F90BAAA020E4236E00FF9D85 /* ProductBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				F95FA4B820E914A800490B21 /* Utility */,
+				F95FA4AE20E6D08900490B21 /* Model */,
 				F99BE00F20E58A5900E1EDA0 /* Main.storyboard */,
 				F90BAAA120E4236E00FF9D85 /* AppDelegate.swift */,
 				F90BAAA320E4236E00FF9D85 /* ProductListingViewController.swift */,
 				F90BAAAB20E4237200FF9D85 /* Assets.xcassets */,
 				F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */,
 				F90BAAB020E4237200FF9D85 /* Info.plist */,
-				F90BAAA820E4236E00FF9D85 /* ProductBrowser.xcdatamodeld */,
 				F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */,
 			);
 			path = ProductBrowser;
@@ -102,6 +143,25 @@
 			path = ProductBrowserTests;
 			sourceTree = "<group>";
 		};
+		F95FA4AE20E6D08900490B21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F95FA4AF20E6D08900490B21 /* CoreDataManager.swift */,
+				F95FA4B020E6D08900490B21 /* Product+CoreDataClass.swift */,
+				F95FA4B120E6D08900490B21 /* Product+CoreDataProperties.swift */,
+				F95FA4B220E6D08900490B21 /* ProductBrowser.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F95FA4B820E914A800490B21 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F95FA4B920E914E200490B21 /* WebServiceManager.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F90BAABE20E4237300FF9D85 /* Build configuration list for PBXNativeTarget "ProductBrowser" */;
 			buildPhases = (
+				F68A364951B9415807952344 /* [CP] Check Pods Manifest.lock */,
 				F90BAA9A20E4236E00FF9D85 /* Sources */,
 				F90BAA9B20E4236E00FF9D85 /* Frameworks */,
 				F90BAA9C20E4236E00FF9D85 /* Resources */,
@@ -126,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F90BAAC120E4237300FF9D85 /* Build configuration list for PBXNativeTarget "ProductBrowserTests" */;
 			buildPhases = (
+				9C0AC5AAC90F8D4DDAC80182 /* [CP] Check Pods Manifest.lock */,
 				F90BAAB120E4237200FF9D85 /* Sources */,
 				F90BAAB220E4237200FF9D85 /* Frameworks */,
 				F90BAAB320E4237200FF9D85 /* Resources */,
@@ -198,14 +260,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9C0AC5AAC90F8D4DDAC80182 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProductBrowserTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F68A364951B9415807952344 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProductBrowser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F90BAA9A20E4236E00FF9D85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F90BAAA420E4236E00FF9D85 /* ProductListingViewController.swift in Sources */,
+				F95FA4B720E6D08A00490B21 /* ProductBrowser.xcdatamodeld in Sources */,
 				F99BE00E20E57C1E00E1EDA0 /* ProductListTableViewCell.swift in Sources */,
-				F90BAAAA20E4236E00FF9D85 /* ProductBrowser.xcdatamodeld in Sources */,
+				F95FA4B620E6D08A00490B21 /* Product+CoreDataProperties.swift in Sources */,
+				F95FA4BA20E914E300490B21 /* WebServiceManager.swift in Sources */,
+				F95FA4B420E6D08A00490B21 /* CoreDataManager.swift in Sources */,
+				F95FA4B520E6D08A00490B21 /* Product+CoreDataClass.swift in Sources */,
 				F90BAAA220E4236E00FF9D85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +469,7 @@
 		};
 		F90BAABF20E4237300FF9D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED1AFAAEAD1DD4286CD66DDD /* Pods-ProductBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +488,7 @@
 		};
 		F90BAAC020E4237300FF9D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D37FA8DA221FFE320CA0061 /* Pods-ProductBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,6 +507,7 @@
 		};
 		F90BAAC220E4237300FF9D85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8B4C366FB13E061FBDD892A /* Pods-ProductBrowserTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -421,6 +529,7 @@
 		};
 		F90BAAC320E4237300FF9D85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4BFE7A607803448A47DE093 /* Pods-ProductBrowserTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -473,12 +582,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		F90BAAA820E4236E00FF9D85 /* ProductBrowser.xcdatamodeld */ = {
+		F95FA4B220E6D08900490B21 /* ProductBrowser.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				F90BAAA920E4236E00FF9D85 /* ProductBrowser.xcdatamodel */,
+				F95FA4B320E6D08900490B21 /* ProductBrowser.xcdatamodel */,
 			);
-			currentVersion = F90BAAA920E4236E00FF9D85 /* ProductBrowser.xcdatamodel */;
+			currentVersion = F95FA4B320E6D08900490B21 /* ProductBrowser.xcdatamodel */;
 			path = ProductBrowser.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

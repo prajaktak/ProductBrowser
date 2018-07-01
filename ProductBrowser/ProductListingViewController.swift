@@ -25,7 +25,10 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
     
     //MARK - TableView delegate and datasource methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if productsArray != nil {
             return productsArray.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
