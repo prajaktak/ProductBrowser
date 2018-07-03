@@ -14,6 +14,9 @@
 		F90BAAAC20E4237200FF9D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90BAAAB20E4237200FF9D85 /* Assets.xcassets */; };
 		F90BAAAF20E4237200FF9D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */; };
 		F90BAABA20E4237300FF9D85 /* ProductBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAAB920E4237300FF9D85 /* ProductBrowserTests.swift */; };
+		F920E51620EBAEDA0084C9AF /* ProductInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F920E51520EBAEDA0084C9AF /* ProductInformationViewController.swift */; };
+		F920E51820EBB3AE0084C9AF /* UIImageView+loadImageUsingUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F920E51720EBB3AE0084C9AF /* UIImageView+loadImageUsingUrl.swift */; };
+		F920E51A20EBE68A0084C9AF /* String+HTMLStringConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F920E51920EBE68A0084C9AF /* String+HTMLStringConversion.swift */; };
 		F95FA4B420E6D08A00490B21 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4AF20E6D08900490B21 /* CoreDataManager.swift */; };
 		F95FA4B520E6D08A00490B21 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B020E6D08900490B21 /* Product+CoreDataClass.swift */; };
 		F95FA4B620E6D08A00490B21 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FA4B120E6D08900490B21 /* Product+CoreDataProperties.swift */; };
@@ -50,6 +53,9 @@
 		F90BAAB520E4237200FF9D85 /* ProductBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90BAAB920E4237300FF9D85 /* ProductBrowserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductBrowserTests.swift; sourceTree = "<group>"; };
 		F90BAABB20E4237300FF9D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F920E51520EBAEDA0084C9AF /* ProductInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInformationViewController.swift; sourceTree = "<group>"; };
+		F920E51720EBB3AE0084C9AF /* UIImageView+loadImageUsingUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+loadImageUsingUrl.swift"; sourceTree = "<group>"; };
+		F920E51920EBE68A0084C9AF /* String+HTMLStringConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLStringConversion.swift"; sourceTree = "<group>"; };
 		F95FA4AF20E6D08900490B21 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F95FA4B020E6D08900490B21 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F95FA4B120E6D08900490B21 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 				F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */,
 				F90BAAB020E4237200FF9D85 /* Info.plist */,
 				F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */,
+				F920E51520EBAEDA0084C9AF /* ProductInformationViewController.swift */,
 			);
 			path = ProductBrowser;
 			sourceTree = "<group>";
@@ -161,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				F95FA4B920E914E200490B21 /* WebServiceManager.swift */,
+				F920E51720EBB3AE0084C9AF /* UIImageView+loadImageUsingUrl.swift */,
+				F920E51920EBE68A0084C9AF /* String+HTMLStringConversion.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -330,10 +339,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F920E51A20EBE68A0084C9AF /* String+HTMLStringConversion.swift in Sources */,
 				F90BAAA420E4236E00FF9D85 /* ProductListingViewController.swift in Sources */,
+				F920E51820EBB3AE0084C9AF /* UIImageView+loadImageUsingUrl.swift in Sources */,
 				F95FA4B720E6D08A00490B21 /* ProductBrowser.xcdatamodeld in Sources */,
 				F99BE00E20E57C1E00E1EDA0 /* ProductListTableViewCell.swift in Sources */,
 				F95FA4B620E6D08A00490B21 /* Product+CoreDataProperties.swift in Sources */,
+				F920E51620EBAEDA0084C9AF /* ProductInformationViewController.swift in Sources */,
 				F95FA4BA20E914E300490B21 /* WebServiceManager.swift in Sources */,
 				F95FA4B420E6D08A00490B21 /* CoreDataManager.swift in Sources */,
 				F95FA4B520E6D08A00490B21 /* Product+CoreDataClass.swift in Sources */,

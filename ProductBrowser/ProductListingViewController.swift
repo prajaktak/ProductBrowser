@@ -11,14 +11,17 @@ import UIKit
 class ProductListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var productsTableView: UITableView!
-    var productsArray : [Product]!
+    var productsArray: [Product] = [Product]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // swiftlint:disable line_length
+        initiateProductArray()
         WebserviceManager().getData(form: "https://gist.githubusercontent.com/anonymous/a3b3e50413fff111505a/raw/0522419f508e7ea506a8856586dce11a5664e9df/products.json") { (result) in
-            switch result{
+            switch result {
             case .success(let jsonObject):
                 CoreDataManager.sharedInstance.saveInCoreDataWith(array: jsonObject)
+                self.initiateProductArray()
+                self.productsTableView.reloadData()
                 print("Success")
             case .failure:
                 print("Failure")
@@ -26,25 +29,36 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    func initiateProductArray() {
+        do {
+            self.productsArray = try CoreDataManager.sharedInstance.persistentContainer.viewContext.fetch(Product.fetchRequest()) as [Product]
+        } catch {
+            print("can not fetch data for product")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     // MARK: - TableView delegate and datasource methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if productsArray != nil {
-            return productsArray.count
-        }
-        return 0
+        return productsArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast line_length
         let productCell: ProductListTableViewCell =  tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductListTableViewCell
         // swiftlint:enable force_cast line_length
-        productCell.imageView?.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-        productCell.productTitleLabel.text = "Title"
+        productCell.setProductCell(product: productsArray[indexPath.row])
         return productCell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main",
+                                      bundle: Bundle.main)
+        // swiftlint:disable line_length
+        let productInfoVC = storyboard.instantiateViewController(withIdentifier: "productInfoVC") as? ProductInformationViewController
+        // swiftlint:enable line_length
+        productInfoVC?.product = productsArray[indexPath.row]
+        self.navigationController?.pushViewController(productInfoVC!, animated: true)
     }
 
 }

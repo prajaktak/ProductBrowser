@@ -49,10 +49,15 @@ class CoreDataManager: NSObject {
         if let productEntity = NSEntityDescription.insertNewObject(forEntityName: "Product", into: context) as? Product {
             productEntity.name = dictionary["name"] as? String
             productEntity.category = dictionary["category"] as? String
-            if let imageURLString = dictionary["image_url"] as? String {
-               productEntity.imageURL = URL(string: imageURLString)
+            productEntity.imageURL =  dictionary["image_url"] as? String
+            if (productEntity.imageURL?.isEmpty)! {
+                print("URL not present")
             } else {
-                productEntity.imageURL = URL(string: "")
+                let http = URL(string: productEntity.imageURL!)
+                var components =  URLComponents(url: http!, resolvingAgainstBaseURL: false)
+                components?.scheme = "https"
+                let https =  components?.url
+                productEntity.imageURL =  https?.absoluteString
             }
             if let remainingItems = dictionary["items_remaining"] as? NSNumber {
                 productEntity.itemsRemaining = remainingItems.int16Value
@@ -63,6 +68,7 @@ class CoreDataManager: NSObject {
         return nil
     }
     func saveInCoreDataWith(array: [[String: AnyObject]]) {
+        _ = CoreDataManager.sharedInstance.persistentContainer.viewContext.deletedObjects
         _ = array.map {self.createPhotoEntityFrom(dictionary: $0)}
         do {
             try CoreDataManager.sharedInstance.persistentContainer.viewContext.save()

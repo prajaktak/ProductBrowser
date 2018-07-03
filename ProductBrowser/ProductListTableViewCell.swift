@@ -21,5 +21,14 @@ class ProductListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    func setProductCell(product: Product) {
+        DispatchQueue.main.async {
+            self.productTitleLabel.text = product.name
+            print(product.imageURL ?? " ")
+            if let url = product.imageURL {
+                self.productImageView.loadImageUsingCacheWithURLString(url, placeHolder: UIImage(named: "placeholder"))
+            }
+        }
+    }
 
 }

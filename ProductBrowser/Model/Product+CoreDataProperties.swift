@@ -2,7 +2,7 @@
 //  Product+CoreDataProperties.swift
 //  ProductBrowser
 //
-//  Created by Prajakta Kulkarni on 29/06/2018.
+//  Created by Prajakta Kulkarni on 03/07/2018.
 //  Copyright © 2018 Prajakta Kulkarni. All rights reserved.
 //
 //
@@ -18,7 +18,7 @@ extension Product {
 
     @NSManaged public var category: String?
     @NSManaged public var imageData: NSData?
-    @NSManaged public var imageURL: URL?
+    @NSManaged public var imageURL: String?
     @NSManaged public var itemsRemaining: Int16
     @NSManaged public var name: String?
     @NSManaged public var productDescription: String?
