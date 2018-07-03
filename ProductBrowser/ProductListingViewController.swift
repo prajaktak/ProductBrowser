@@ -7,34 +7,56 @@
 //
 
 import UIKit
+import CoreData
 
 class ProductListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var productsTableView: UITableView!
-    var productsArray : [Product]!
+    lazy var fetchedhResultController: NSFetchedResultsController<Product> = {
+        let fetchRequest = NSFetchRequest<Product>(entityName: "Product")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        //fetchRequest.predicate = NSPredicate(format: "remainingItems >= 0")
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                             managedObjectContext: CoreDataManager.sharedInstance.managedObjectContext,
+                                             sectionNameKeyPath: nil, cacheName: nil)
+        // frc.delegate = self
+        return frc
+    }()
+    func saveInCoreDataWith(array: [[String: AnyObject]]) {
+        _ = array.map {CoreDataManager.sharedInstance.createPhotoEntityFrom(dictionary: $0)}
+        do {
+            try CoreDataManager.sharedInstance.managedObjectContext.save()
+        } catch let error {
+            print(error)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDataFromWebservice()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    func getDataFromWebservice() {
         // swiftlint:disable line_length
         WebserviceManager().getData(form: "https://gist.githubusercontent.com/anonymous/a3b3e50413fff111505a/raw/0522419f508e7ea506a8856586dce11a5664e9df/products.json") { (result) in
-            switch result{
+            switch result {
             case .success(let jsonObject):
-                CoreDataManager.sharedInstance.saveInCoreDataWith(array: jsonObject)
+                self.saveInCoreDataWith(array: jsonObject)
+                self.productsTableView.reloadData()
                 print("Success")
             case .failure:
                 print("Failure")
             }
         }
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     // MARK: - TableView delegate and datasource methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if productsArray != nil {
-            return productsArray.count
+        if let count = fetchedhResultController.sections?.first?.numberOfObjects {
+            return count
         }
         return 0
     }
@@ -43,7 +65,8 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         let productCell: ProductListTableViewCell =  tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductListTableViewCell
         // swiftlint:enable force_cast line_length
         productCell.imageView?.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-        productCell.productTitleLabel.text = "Title"
+        let product = fetchedhResultController.object(at: indexPath)
+        productCell.productTitleLabel.text = product.name
         return productCell
     }
 
