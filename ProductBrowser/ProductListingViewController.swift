@@ -40,6 +40,7 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         WebserviceManager().getData(form: "https://gist.githubusercontent.com/anonymous/a3b3e50413fff111505a/raw/0522419f508e7ea506a8856586dce11a5664e9df/products.json") { (result) in
             switch result {
             case .success(let jsonObject):
+                CoreDataManager.sharedInstance.clearData()
                 self.saveInCoreDataWith(array: jsonObject)
                 self.productsTableView.reloadData()
                 print("Success")
