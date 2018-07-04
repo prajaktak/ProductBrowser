@@ -129,17 +129,13 @@
 		F90BAAA020E4236E00FF9D85 /* ProductBrowser */ = {
 			isa = PBXGroup;
 			children = (
+				F920E51C20ECEFC80084C9AF /* View */,
+				F920E51B20ECEFA80084C9AF /* Controllers */,
 				F95FA4BC20E92A1800490B21 /* Resources */,
 				F95FA4B820E914A800490B21 /* Utility */,
 				F95FA4AE20E6D08900490B21 /* Model */,
-				F99BE00F20E58A5900E1EDA0 /* Main.storyboard */,
 				F90BAAA120E4236E00FF9D85 /* AppDelegate.swift */,
-				F90BAAA320E4236E00FF9D85 /* ProductListingViewController.swift */,
-				F90BAAAB20E4237200FF9D85 /* Assets.xcassets */,
-				F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */,
 				F90BAAB020E4237200FF9D85 /* Info.plist */,
-				F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */,
-				F920E51520EBAEDA0084C9AF /* ProductInformationViewController.swift */,
 			);
 			path = ProductBrowser;
 			sourceTree = "<group>";
@@ -151,6 +147,25 @@
 				F90BAABB20E4237300FF9D85 /* Info.plist */,
 			);
 			path = ProductBrowserTests;
+			sourceTree = "<group>";
+		};
+		F920E51B20ECEFA80084C9AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F920E51520EBAEDA0084C9AF /* ProductInformationViewController.swift */,
+				F90BAAA320E4236E00FF9D85 /* ProductListingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F920E51C20ECEFC80084C9AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F90BAAAD20E4237200FF9D85 /* LaunchScreen.storyboard */,
+				F99BE00D20E57C1E00E1EDA0 /* ProductListTableViewCell.swift */,
+				F99BE00F20E58A5900E1EDA0 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F95FA4AE20E6D08900490B21 /* Model */ = {
@@ -177,6 +192,7 @@
 		F95FA4BC20E92A1800490B21 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F90BAAAB20E4237200FF9D85 /* Assets.xcassets */,
 				F95FA4C120E92F6200490B21 /* githubusercontent.com.cer */,
 			);
 			path = Resources;

@@ -103,6 +103,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Product Browser" id="elL-Iq-S0z"/>
                     <connections>
+                        <outlet property="lastUpdatedLabel" destination="46F-Ud-awu" id="GmK-pC-JV5"/>
+                        <outlet property="numberOfProductsLabel" destination="j3C-dd-ooM" id="of0-IG-9Rs"/>
                         <outlet property="productsTableView" destination="GpP-Ii-0Zg" id="2IN-WS-bmQ"/>
                     </connections>
                 </viewController>

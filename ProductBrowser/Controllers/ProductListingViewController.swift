@@ -11,23 +11,32 @@ import UIKit
 class ProductListingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var productsTableView: UITableView!
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    @IBOutlet weak var numberOfProductsLabel: UILabel!
+    var updateTime: NSDate = NSDate()
     var productsArray: [Product] = [Product]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // swiftlint:disable line_length
         initiateProductArray()
+        updateLocalData()
+    }
+    func updateLocalData() {
+         // swiftlint:disable line_length
         WebserviceManager().getData(form: "https://gist.githubusercontent.com/anonymous/a3b3e50413fff111505a/raw/0522419f508e7ea506a8856586dce11a5664e9df/products.json") { (result) in
             switch result {
             case .success(let jsonObject):
                 CoreDataManager.sharedInstance.saveInCoreDataWith(array: jsonObject)
+                self.updateTime =  NSDate()
                 self.initiateProductArray()
                 self.productsTableView.reloadData()
+                Timer.scheduledTimer(withTimeInterval: 300, repeats: false, block: { (_) in
+                    self.updateLocalData()
+                })
                 print("Success")
             case .failure:
                 print("Failure")
             }
         }
-        // Do any additional setup after loading the view, typically from a nib.
     }
     func initiateProductArray() {
         do {
@@ -35,6 +44,8 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         } catch {
             print("can not fetch data for product")
         }
+        numberOfProductsLabel.text =  "Number of Products:\(productsArray.count)"
+        lastUpdatedLabel.text = "Last updated at: \(updateTime.description)"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,6 +69,20 @@ class ProductListingViewController: UIViewController, UITableViewDelegate, UITab
         let productInfoVC = storyboard.instantiateViewController(withIdentifier: "productInfoVC") as? ProductInformationViewController
         // swiftlint:enable line_length
         productInfoVC?.product = productsArray[indexPath.row]
+        // swiftlint:disable force_cast
+        let currentCell: ProductListTableViewCell = tableView.cellForRow(at: indexPath) as! ProductListTableViewCell
+        // swiftlint:enable force_cast
+        let currentCellFrame: CGRect = currentCell.frame
+        let cellImgViewFrame: CGRect = currentCell.productImageView.frame
+        let cellLabelFrame: CGRect = currentCell.productTitleLabel.frame
+        productInfoVC?.cellImageFrame = CGRect(x: cellImgViewFrame.origin.x,
+                                               y: currentCellFrame.origin.y + cellLabelFrame.origin.y ,
+                                               width: cellImgViewFrame.width,
+                                               height: cellImgViewFrame.height)
+        productInfoVC?.cellLabelFrame = CGRect(x: cellLabelFrame.origin.x,
+                                               y: currentCellFrame.origin.y + cellLabelFrame.origin.y,
+                                               width: cellLabelFrame.width,
+                                               height: cellLabelFrame.height)
         self.navigationController?.pushViewController(productInfoVC!, animated: true)
     }
 

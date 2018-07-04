@@ -13,12 +13,26 @@ class ProductInformationViewController: UIViewController {
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var productDescriptionTextView: UITextView!
     var product: Product!
+    var cellImageFrame: CGRect!
+    var cellLabelFrame: CGRect!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.navigationController?.title = product.name
         initializeView()
+        animateViews()
+    }
+    func animateViews() {
+        let actualImageFrame =  productImageView.frame
+        let actualLabelFrame =  productTitleLabel.frame
+        productImageView.frame = cellImageFrame
+        productTitleLabel.frame = cellLabelFrame
+        UIView.animate(withDuration:0.8, delay: 0.001, options: .allowAnimatedContent, animations: {
+            self.productImageView.frame = actualImageFrame
+            self.productTitleLabel.frame = actualLabelFrame
+        }) { (isComplete) in
+        }
     }
     func initializeView() {
         if let url = product.imageURL {
