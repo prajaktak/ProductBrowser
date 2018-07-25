@@ -81,12 +81,11 @@ class CoreDataManager: NSObject {
     }
     func clearData() {
         do {
-            
             let context = CoreDataManager.sharedInstance.persistentContainer.viewContext
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
             do {
                 let objects  = try context.fetch(fetchRequest) as? [NSManagedObject]
-                _ = objects.map{ $0.map{context.delete($0)}}
+                _ = objects.map {$0.map {context.delete($0)}}
                 CoreDataManager.sharedInstance.saveContext()
             } catch let error {
                 print("ERROR DELETING : \(error)")

@@ -31,8 +31,8 @@ class ProductInformationViewController: UIViewController {
         UIView.animate(withDuration: 0.8, delay: 0.001, options: .allowAnimatedContent, animations: {
             self.productImageView.frame = actualImageFrame
             self.productTitleLabel.frame = actualLabelFrame
-        }) { (isComplete) in
-        }
+        }, completion: { (_) in
+        })
     }
     func initializeView() {
         if let url = product.imageURL {
