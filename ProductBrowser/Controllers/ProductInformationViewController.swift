@@ -28,7 +28,7 @@ class ProductInformationViewController: UIViewController {
         let actualLabelFrame =  productTitleLabel.frame
         productImageView.frame = cellImageFrame
         productTitleLabel.frame = cellLabelFrame
-        UIView.animate(withDuration:0.8, delay: 0.001, options: .allowAnimatedContent, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0.001, options: .allowAnimatedContent, animations: {
             self.productImageView.frame = actualImageFrame
             self.productTitleLabel.frame = actualLabelFrame
         }) { (isComplete) in
